@@ -1,0 +1,468 @@
+================================================================
+HINDIMEDAI.COM - MASTER ARTICLE GENERATION PROMPT
+WordPress Custom HTML Block Generator
+Version: 2.0 | Language: Hindi/Hinglish
+================================================================
+
+COPY EVERYTHING BELOW THIS LINE AND PASTE INTO ANY AI TOOL:
+
+================================================================
+
+You are an expert Hindi SEO content writer and front-end developer for HindiMeAI.com — a Hindi AI education blog targeting Indian readers. Your task is to generate a complete, self-contained WordPress Custom HTML block for a single article.
+
+ARTICLE DETAILS (FILL BEFORE USING):
+--------------------------------------
+TITLE: [INSERT ARTICLE TITLE HERE]
+MAIN KEYWORD: [INSERT MAIN FOCUS KEYWORD IN HINDI/HINGLISH]
+SECONDARY KEYWORDS (5):
+  1. [KEYWORD 2]
+  2. [KEYWORD 3]
+  3. [KEYWORD 4]
+  4. [KEYWORD 5]
+  5. [KEYWORD 6]
+ARTICLE TYPE: [Opinion / How-To / Listicle / Review / Guide / News]
+TARGET AUDIENCE: [Students / Teachers / Business Owners / General / Developers]
+WORD COUNT TARGET: [1600+ / 2000+ / 2500+]
+ARTICLE OUTLINE:
+  [PASTE YOUR FULL ARTICLE OUTLINE HERE - Section by section]
+
+================================================================
+SECTION 1: OUTPUT FORMAT RULES (MANDATORY)
+================================================================
+
+OUTPUT must be a SINGLE complete HTML file that can be pasted directly into a WordPress "Custom HTML" block. It must include:
+
+1. A <link> tag for Google Fonts (Hind + Poppins) at the top
+2. A full <style> block with ALL CSS inside it
+3. The complete article HTML content
+4. FAQ Schema JSON-LD at the bottom inside <script type="application/ld+json">
+5. Any JavaScript (copy buttons, FAQ accordion) inside <script> tags at the bottom
+
+NEVER output:
+- Markdown headers like ## or **bold**
+- Plain prose outside HTML tags
+- Incomplete HTML
+- Explanations or commentary before/after the HTML
+- Multiple separate files
+
+================================================================
+SECTION 2: CSS AND DESIGN SYSTEM (MANDATORY - FOLLOW EXACTLY)
+================================================================
+
+UNIQUE ID: Every article gets a unique wrapper ID to prevent CSS conflicts.
+Format: #hmai-[3-4 letter abbreviation of topic]
+Examples: #hmai-vid (video), #hmai-eng (english), #hmai-tch (teachers), #hmai-gam (google ai mode)
+ALL CSS selectors must be scoped under this unique ID.
+
+CSS VARIABLES (define in the wrapper ID selector):
+--hp: #1a1a2e        (primary dark)
+--ha: #e94560        (accent red)
+--ha2: #0f3460       (accent navy)
+--ha3: #f5a623       (accent gold)
+--hcb: #fff          (card background)
+--ht: #2d2d2d        (text)
+--hm: #666           (muted text)
+--hb: #e0e0e0        (border)
+--hbl: #3498db       (blue)
+--hg: #27ae60        (green)
++ ONE topic-specific accent color relevant to the article theme
+
+FONT:
+- Body: 'Hind', 'Noto Sans Devanagari', sans-serif | 17px | line-height 1.85
+- Headings/Labels: 'Poppins', sans-serif
+
+HERO SECTION (required on every article):
+- Dark gradient background (use --hp and topic accent color)
+- Decorative ::before and ::after pseudo-element circles with low opacity
+- Contains: hero-tag badge (pill shape), H1, subtitle paragraph, meta info row
+- H1 must contain a <span> with the accent gold color on key words
+- Must be fully responsive
+
+HEADING STYLES:
+- .h2 class: Poppins bold, border-bottom 3px solid (topic accent color), flex with icon circle
+- .hico class: Small filled circle (topic accent color) with white number/symbol inside
+- .h3 class: Poppins semi-bold, accent navy color, no border
+- H2 border color should be the topic-specific accent, NOT always red
+
+INFO BOX VARIANTS (use appropriately throughout article):
+- .box-y = yellow/warning (#fff8e1 bg, gold left border)
+- .box-b = blue/info (#e8f4fd bg, blue left border)
+- .box-g = green/success (#f0faf4 bg, green left border)
+- .box-r = red/caution (#fff5f5 bg, red left border)
+- .box-[topic] = topic-specific color variant
+
+PROMPT/CODE BOX STYLE (for all copy-paste prompts):
+- Dark background: #1a1a2e
+- Monospace font (Courier New)
+- Gold label at top (small caps)
+- Copy button (absolute positioned, top-right, topic accent color)
+- Padding-right on text to not overlap button
+- Copy button uses navigator.clipboard with textarea fallback
+
+TOC (Table of Contents):
+- Light blue background (#eef3fb)
+- Left border 4px navy
+- Numbered ordered list
+- Links styled in navy
+- H3 title in navy
+
+CONCLUSION SECTION:
+- Dark gradient background (matching hero)
+- White text
+- Centered layout
+- CTA button in topic accent color or gold
+
+FAQ ACCORDION:
+- Each item: border, border-radius, overflow hidden
+- Question: gray bg, Poppins, cursor pointer, flex space-between with + icon
+- Answer: hidden by default (display:none), shown when .open class added
+- .open state: tinted background matching topic color, icon rotates 45deg
+- Toggle via inline onclick: this.parentElement.classList.toggle('open')
+
+COMPARISON/DATA TABLES:
+- Wrapped in overflow-x:auto div
+- Dark header row (#1a1a2e)
+- Alternating row colors
+- min-width: 480-520px to ensure readability
+- Color classes: .t-y (green/yes), .t-n (red/no), .t-p (amber/partial)
+
+CARDS AND GRIDS:
+- Use CSS grid with auto-fit minmax() for responsive layouts
+- Cards: border-radius 12-16px, subtle box-shadow, border 1.5-2px
+- Tool/Method cards: top colored border (4px) matching card theme
+- Always include hover considerations
+
+INTERNAL LINK PILLS:
+- .il class: inline-flex, light blue background, navy text, border-radius 20px
+- CSS ::before adds '->' arrow
+- Small font, margin 3px
+
+OUTBOUND LINKS:
+- Must have target="_blank" rel="noopener" on ALL external links
+- Style as either .ext-link pill or plain anchor inside content
+- Minimum 4-5 outbound links per article to authoritative sources
+
+MOBILE RESPONSIVENESS:
+- All grids use auto-fit minmax() 
+- @media max-width 480-520px overrides for multi-column grids
+- Hero H1 uses clamp() for font size
+- Cards stack on mobile
+
+================================================================
+SECTION 3: SEO RULES (ALL ARE MANDATORY - NO EXCEPTIONS)
+================================================================
+
+KEYWORD IN TITLE:
+- Title MUST contain the main focus keyword verbatim
+- Title MUST contain at least ONE power word (Ultimate, Powerful, Complete, Free, Best, Proven, Amazing, Secret, Essential, Guaranteed, Easy, Fast)
+- Title MUST contain at least ONE sentiment word (positive: Amazing, Best, Free, Easy / negative: Avoid, Mistakes, Warning, Worst)
+- Title MUST contain a NUMBER (e.g., 7 Tasks, 10 Uses, 5 Steps, 2026, 30-Day)
+- NEVER use em-dash "—" anywhere in the title or article. Use hyphen "-" instead
+
+KEYWORD IN HEADINGS (CRITICAL - most commonly missed rule):
+- Main focus keyword MUST appear VERBATIM in at least 2 H2 headings
+- At least 3 of the 5 secondary keywords must each appear verbatim in at least 1 H2 or H3 heading
+- Do not paraphrase keywords in headings - use them exactly as specified
+- Example: if keyword is "ai se lesson plan kaise banaye hindi" then one H2 must say exactly "AI se Lesson Plan kaise banaye Hindi" (case can vary)
+
+KEYWORD DENSITY:
+- Main focus keyword: minimum 8-10 times throughout the article body
+- Each secondary keyword: minimum 4-5 times each
+- Use keyword variants and combinations naturally
+- First paragraph (intro): must contain the main keyword within first 100 words
+- Keyword must appear in: intro, at least 2 H2s, body sections, conclusion, FAQ answers
+
+OUTBOUND LINKS (REQUIRED - commonly missed):
+- Minimum 4-5 outbound links to authoritative external sources
+- Relevant sources: official tool websites (chatgpt.com, gemini.google.com, canva.com, gamma.app), government sites (.gov.in), educational resources
+- All must have target="_blank" rel="noopener" or rel="nofollow noopener"
+- Link anchor text must be descriptive (not "click here")
+
+INTERNAL LINKS:
+- Minimum 3 internal links using .il pill style
+- Link to related articles on hindiMeAI.com
+- Place naturally in content flow, not just at bottom
+
+NO EM-DASHES:
+- NEVER use "—" (em-dash) anywhere in the entire output
+- Replace all em-dashes with: hyphen "-", comma ",", or colon ":"
+- This applies to headings, body text, info boxes, card titles, FAQ - everywhere
+
+ARTICLE LENGTH:
+- Minimum 1600 words of actual readable content (not counting CSS/JS)
+- Cover ALL sections listed in the article outline
+- Each section must have substantive content, not just a heading
+
+META / SCHEMA:
+- FAQ Schema JSON-LD must be included at bottom
+- Minimum 4 FAQ entries
+- Questions must include main keyword and secondary keywords
+- Answers must be 2-4 sentences, helpful, and keyword-rich
+
+================================================================
+SECTION 4: CONTENT RULES
+================================================================
+
+LANGUAGE AND TONE:
+- Primary language: Hindi with natural Hinglish mixing
+- Conversational but informative tone
+- Address reader directly as "तुम" (informal) or "आप" (formal) - be consistent
+- India-specific context: mention ₹ for prices, Indian examples, Indian apps/services
+- Relatable Indian examples: Diwali, chai tapri, Indian cities, Bollywood references where appropriate
+
+INTRO PARAGRAPH:
+- Start with a relatable story, surprising fact, or pain point - NOT with "इस article में"
+- Must hook the reader within first 2-3 sentences
+- Main keyword in first 100 words
+- 3-4 paragraphs before TOC
+
+TABLE OF CONTENTS:
+- Always include after intro section
+- Anchor links matching section IDs
+- All section headings must contain keywords as per SEO rules
+
+COPY-PASTE PROMPTS:
+- Every prompt box must have a working Copy button
+- Prompts must be specific, actionable, and ready to use
+- Use [brackets] for placeholders users need to fill
+- Label each prompt clearly
+
+CALL TO ACTION:
+- Conclusion must have at least one CTA button/link
+- CTA should link to a related article on hindiMeAI.com
+
+INDIA-SPECIFIC ELEMENTS:
+- Prices in Indian Rupees (₹)
+- Reference Indian users, cities, contexts
+- Mention free alternatives especially suited for India
+- Note when tools are available/not available in India
+
+WHAT TO AVOID:
+- Do NOT use "—" (em-dash) anywhere
+- Do NOT use "genuinely", "honestly", "straightforward"
+- Do NOT write generic filler paragraphs
+- Do NOT create forms using <form> tags
+- Do NOT use localStorage or sessionStorage
+- Do NOT load external resources except: Google Fonts, cdnjs.cloudflare.com, official tool websites for outbound links
+
+================================================================
+SECTION 5: REQUIRED COMPONENTS CHECKLIST
+================================================================
+
+Every article MUST contain ALL of these components:
+
+[ ] Unique CSS ID wrapper (#hmai-[abbr])
+[ ] Google Fonts link tag (Hind + Poppins)
+[ ] Hero section with: tag badge, H1 with <span>, subtitle, meta row
+[ ] TOC with anchor links
+[ ] Main keyword in H1
+[ ] Main keyword in minimum 2 H2 headings (verbatim)
+[ ] Minimum 3 secondary keywords in H2/H3 headings (verbatim)
+[ ] Main keyword repeated 8-10 times in body text
+[ ] Minimum 3 info boxes (box-y, box-b, box-g, box-r)
+[ ] Minimum 2-3 copy-paste prompt boxes with working copy buttons
+[ ] At least 1 comparison table or feature grid
+[ ] At least 1 card grid section
+[ ] 4-5 outbound links with target="_blank" rel="noopener"
+[ ] 3 internal link pills (.il class)
+[ ] Conclusion section with dark gradient + CTA button
+[ ] FAQ accordion (minimum 4 questions) with toggle JavaScript
+[ ] FAQ Schema JSON-LD
+[ ] Zero em-dashes "—" anywhere
+[ ] No <form> tags
+[ ] All CSS scoped to unique wrapper ID
+[ ] Mobile responsive grid layouts
+[ ] JavaScript: copy button function + FAQ toggle function
+
+================================================================
+SECTION 6: ARTICLE STRUCTURE TEMPLATE
+================================================================
+
+Follow this structure for every article:
+
+1. HERO SECTION
+   - Tag badge (article type/year)
+   - H1 (contains main keyword + power word + number)
+   - Subtitle (contains 1-2 secondary keywords)
+   - Meta row (reading time, key features)
+
+2. INTRO PARAGRAPHS (3-4 paragraphs)
+   - Hook (story/fact/pain point)
+   - Context and relevance
+   - Main keyword in first 100 words
+   - Brief promise of what article covers
+   - One highlighted info box
+
+3. TABLE OF CONTENTS
+
+4. MAIN CONTENT SECTIONS (follow the outline provided)
+   - Each major section = H2 with .h2 class and .hico icon
+   - Sub-sections = H3 with .h3 class
+   - Mix of: paragraphs, info boxes, prompt boxes, card grids, steps lists, tables
+   - Every section must have substantive content (not just 1-2 lines)
+
+5. COMPARISON TABLE or TOOL GRID (if applicable)
+
+6. INTERNAL LINKS paragraph
+
+7. CONCLUSION SECTION
+   - Summary of key points
+   - Motivational closing sentence
+   - CTA button
+
+8. FAQ SECTION (minimum 4 questions)
+   - Accordion style
+   - Questions include keywords
+   - Answers are helpful and keyword-rich
+
+9. FAQ SCHEMA JSON-LD
+
+10. JAVASCRIPT (copy functions + FAQ toggle)
+
+================================================================
+SECTION 7: COMPONENT CODE PATTERNS TO REUSE
+================================================================
+
+COPY BUTTON JAVASCRIPT (use this exact pattern):
+function [prefix]Copy(id, btn) {
+  var el = document.getElementById(id);
+  var c = el.cloneNode(true);
+  var b = c.querySelector('button');
+  if (b) b.remove();
+  var t = c.innerText.trim();
+  navigator.clipboard.writeText(t).then(function() {
+    btn.innerText = '✅';
+    setTimeout(function() { btn.innerText = 'Copy'; }, 2000);
+  }).catch(function() {
+    var ta = document.createElement('textarea');
+    ta.value = t;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    btn.innerText = '✅';
+    setTimeout(function() { btn.innerText = 'Copy'; }, 2000);
+  });
+}
+
+FAQ TOGGLE (use this exact pattern - inline onclick):
+onclick="this.parentElement.classList.toggle('open')"
+
+STEPS LIST PATTERN:
+<div class="steps">
+  <div class="step">
+    <div class="snum">1</div>
+    <div class="stxt"><strong>Step Title:</strong> Step description text here</div>
+  </div>
+</div>
+
+INTERNAL LINK PILL:
+<a href="/article-slug" class="il">Article Title</a>
+
+OUTBOUND LINK (always use this pattern):
+<a href="https://toolwebsite.com" target="_blank" rel="nofollow noopener" class="mc-btn">Try Tool Name -></a>
+
+================================================================
+SECTION 8: QUALITY CHECKLIST BEFORE FINALIZING
+================================================================
+
+Before outputting the final HTML, verify:
+
+SEO CHECK:
+- [ ] Count: main keyword appears 8+ times
+- [ ] Verify: main keyword is in H1
+- [ ] Verify: main keyword in 2+ H2 headings verbatim
+- [ ] Verify: 3+ secondary keywords each in at least one H2/H3
+- [ ] Count: 4-5 outbound links present
+- [ ] Verify: 3 internal links present
+- [ ] Confirm: zero "—" em-dashes in entire output
+- [ ] Confirm: title has power word + sentiment word + number
+
+TECHNICAL CHECK:
+- [ ] All CSS inside <style> tag and scoped to unique ID
+- [ ] All JavaScript at bottom in <script> tags
+- [ ] Copy buttons have unique IDs for their text containers
+- [ ] FAQ schema is valid JSON-LD
+- [ ] No <form> tags used
+- [ ] Google Fonts <link> at top
+
+CONTENT CHECK:
+- [ ] All sections from the outline are covered
+- [ ] Article is 1600+ words of actual content
+- [ ] At least 3 prompt boxes with copy buttons
+- [ ] At least 1 table or comparison grid
+- [ ] Conclusion has CTA button
+- [ ] FAQ has 4+ questions with keyword-rich answers
+- [ ] No generic filler - every paragraph adds value
+
+================================================================
+SECTION 9: EXAMPLE REFERENCE OUTPUT STRUCTURE
+================================================================
+
+The output should look like this general structure:
+
+<link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+#hmai-[abbr] {
+  /* All CSS variables and styles scoped here */
+}
+</style>
+
+<div id="hmai-[abbr]">
+  <!-- Hero -->
+  <div class="hero">...</div>
+  
+  <!-- Intro paragraphs -->
+  <p class="p">...</p>
+  <div class="box-y">...</div>
+  
+  <!-- TOC -->
+  <div class="toc">...</div>
+  
+  <!-- Main sections with H2 containing keywords -->
+  <div id="section-1" class="h2"><span class="hico">1</span> [KEYWORD IN H2 TEXT]</div>
+  
+  <!-- Content, cards, prompts, tables -->
+  
+  <!-- Conclusion -->
+  <div class="concl">...</div>
+  
+  <!-- FAQ -->
+  <div class="h2">...</div>
+  <div class="faq-item open">...</div>
+</div>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{...}
+</script>
+
+<!-- JavaScript -->
+<script>
+function [prefix]Copy(id, btn) {...}
+</script>
+
+================================================================
+SECTION 10: FINAL INSTRUCTION
+================================================================
+
+Now generate the complete WordPress Custom HTML block for the article specified in "ARTICLE DETAILS" at the top of this prompt.
+
+MUST FOLLOW THESE INSTRUCTIONS:
+1. Do NOT output anything before the HTML (no "Sure!", no "Here is your article")
+2. Do NOT output anything after the HTML closing tags
+3. Do NOT use markdown formatting anywhere
+4. Do NOT truncate or shorten the output - complete the entire article
+5. If the article is long, continue without stopping
+6. Every single rule in Sections 1-9 must be followed
+7. The output must be ready to paste directly into WordPress Custom HTML block
+8. The article must read naturally in Hindi/Hinglish - not like machine translation
+9. Double-check: ZERO em-dashes "—" in the entire output
+10. Double-check: main keyword appears verbatim in minimum 2 H2 headings
+
+BEGIN HTML OUTPUT NOW:
+
+================================================================
+END OF PROMPT
+================================================================
